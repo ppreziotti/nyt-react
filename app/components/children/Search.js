@@ -10,6 +10,14 @@ var Search = React.createClass({
   },
   handleSubmit: function(event) {
     event.preventDefault();
+    var topic = event.target.topic.value;
+    var beginYear = event.target.beginYear.value;
+    var endYear = event.target.endYear.value;
+    this.setState({
+      topic: topic,
+      beginYear: beginYear,
+      endYear: endYear,
+    });
   },
   render: function() {
   	return (
@@ -22,15 +30,15 @@ var Search = React.createClass({
 		    <form onSubmit={this.handleSubmit}>
 			  <div className="form-group">
 			    <label for="topic">Topic:</label>
-			    <input type="text" className="form-control" value={this.state.topic} id="topic" required></input>
+			    <input type="text" className="form-control" name="topic" id="topic" required />
 			  </div>
 			  <div className="form-group">
 			    <label for="begin-year">Start Year:</label>
-			    <input type="text" className="form-control" value={this.state.beginYear} id="begin-year"></input>
+			    <input type="text" className="form-control" name="beginYear" id="begin-year" />
 			  </div>
 			  <div className="form-group">
 			    <label for="end-year">End Year:</label>
-			    <input type="text" className="form-control" value={this.state.endYear} id="end-year"></input>
+			    <input type="text" className="form-control" name="endYear" id="end-year" />
 			  </div>
 			  <button type="submit" className="btn btn-default">Submit</button>
 			</form>

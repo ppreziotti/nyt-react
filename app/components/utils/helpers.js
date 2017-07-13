@@ -1,12 +1,12 @@
 var axios = require("axios");
 
-var helper = {
+var helpers = {
   runQuery: function() {
   	var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
   	  'api-key': "14aeb4737a714aa2b3b004a2d7f189dc",
-  	  'q': searchTopic,
-  	  'begin_date': startYear + "0101",
+  	  'q': topic,
+  	  'begin_date': beginYear + "0101",
   	  'end_date': endYear + "1231"
     });
     axios({
@@ -17,3 +17,5 @@ var helper = {
     });
   }
 }
+
+module.exports = helpers;

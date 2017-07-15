@@ -9,7 +9,11 @@ var Results = React.createClass({
 		    <h3 className="panel-title">Results</h3>
 		  </div>
 		  <div className="panel-body" id="results">
-
+		  	<p>{this.props.results}</p><button>Save Article</button>
+		  	<p>{this.props.results}</p><button>Save Article</button>
+		  	<p>{this.props.results}</p><button>Save Article</button>
+		  	<p>{this.props.results}</p><button>Save Article</button>
+		  	<p>{this.props.results}</p><button>Save Article</button>
 	      </div>
 		</div>
 	  </div>

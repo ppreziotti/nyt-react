@@ -8,15 +8,33 @@ var Search = React.createClass({
       endYear: ""
   	}
   },
+  updateTopic: function(event) {
+    event.preventDefault();
+    this.setState({
+      topic: event.target.value
+    });
+  },
+  updateBeginYear: function(event) {
+    event.preventDefault();
+    this.setState({
+      beginYear: event.target.value
+    });
+  },
+  updateEndYear: function(event) {
+    event.preventDefault();
+    this.setState({
+      endYear: event.target.value
+    });
+  },
   handleSubmit: function(event) {
     event.preventDefault();
-    var topic = event.target.topic.value;
-    var beginYear = event.target.beginYear.value;
-    var endYear = event.target.endYear.value;
+    this.props.setTopic(this.state.topic);
+    this.props.setBeginYear(this.state.beginYear);
+    this.props.setEndYear(this.state.endYear);
     this.setState({
-      topic: topic,
-      beginYear: beginYear,
-      endYear: endYear,
+      topic: "",
+      beginYear: "",
+      endYear: ""
     });
   },
   render: function() {
@@ -28,31 +46,22 @@ var Search = React.createClass({
 		  </div>
 		  <div className="panel-body">
 		    <form onSubmit={this.handleSubmit}>
-			  <div className="form-group">
-			    <label for="topic">Topic:</label>
-			    <input type="text" className="form-control" name="topic" id="topic" required />
-			  </div>
-			  <div className="form-group">
-			    <label for="begin-year">Start Year:</label>
-			    <input type="text" className="form-control" name="beginYear" id="begin-year" />
-			  </div>
-			  <div className="form-group">
-			    <label for="end-year">End Year:</label>
-			    <input type="text" className="form-control" name="endYear" id="end-year" />
-			  </div>
-			  <button type="submit" className="btn btn-default">Submit</button>
-			</form>
+  			  <div className="form-group">
+  			    <label for="topic">Topic:</label>
+  			    <input type="text" className="form-control" name="topic" id="topic" onChange={this.updateTopic} required />
+  			  </div>
+  			  <div className="form-group">
+  			    <label for="begin-year">Start Year:</label>
+  			    <input type="text" className="form-control" name="beginYear" id="begin-year" onChange={this.updateBeginYear} />
+  			  </div>
+  			  <div className="form-group">
+  			    <label for="end-year">End Year:</label>
+  			    <input type="text" className="form-control" name="endYear" id="end-year" onChange={this.updateEndYear} />
+  			  </div>
+  			  <button type="submit" className="btn btn-default">Submit</button>
+			  </form>
 		  </div>
 	    </div>
-
-		<div className="panel panel-default" id="results">
-		  <div className="panel-heading">
-		    <h3 className="panel-title">Results</h3>
-		  </div>
-		  <div className="panel-body" id="results">
-
-		  </div>
-		</div>
 	  </div>
   	);
   }

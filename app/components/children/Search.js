@@ -48,15 +48,15 @@ var Search = React.createClass({
 		    <form onSubmit={this.handleSubmit}>
   			  <div className="form-group">
   			    <label for="topic">Topic:</label>
-  			    <input type="text" className="form-control" name="topic" id="topic" onChange={this.updateTopic} required />
+  			    <input type="text" className="form-control" name="topic" id="topic" onChange={this.updateTopic} required/>
   			  </div>
   			  <div className="form-group">
   			    <label for="begin-year">Start Year:</label>
-  			    <input type="text" className="form-control" name="beginYear" id="begin-year" onChange={this.updateBeginYear} />
+  			    <input type="text" className="form-control" name="beginYear" id="begin-year" onChange={this.updateBeginYear} required/>
   			  </div>
   			  <div className="form-group">
   			    <label for="end-year">End Year:</label>
-  			    <input type="text" className="form-control" name="endYear" id="end-year" onChange={this.updateEndYear} />
+  			    <input type="text" className="form-control" name="endYear" id="end-year" onChange={this.updateEndYear} required/>
   			  </div>
   			  <button type="submit" className="btn btn-default">Submit</button>
 			  </form>

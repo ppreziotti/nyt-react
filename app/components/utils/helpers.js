@@ -10,15 +10,11 @@ var helpers = {
   	  'end_date': endYear + "1231"
     });
     return axios.get(queryURL).then(function(response) {
-      var queryResults = [];
+      var searchResults = [];
       for (var i = 0; i < 5; i++) {
-        console.log(response.data.response.docs[i].headline.main);
-        console.log(response.data.response.docs[i].web_url);
-        var result = response.data.response.docs[i];
-        queryResults.push(result);
+        searchResults.push(response.data.response.docs[i]);
       }
-      console.log(queryResults);
-      return queryResults;
+      return searchResults;
     });
   },
   // getSaved: function() {

@@ -12,7 +12,7 @@ module.exports = function(app) {
 
   app.post('/api/saved', function(req, res) {
   	Article.create({
-  	  title: req.body.title,
+  	  headline: req.body.headline,
   	  date: req.body.date,
   	  url: req.body.url
   	}, function(err, article) {
@@ -26,7 +26,7 @@ module.exports = function(app) {
   });
 
   app.delete('/api/delete', function(req, res) {
-  	Article.delete({title: req.body.title}, function(err, article) {
+  	Article.delete({headline: req.body.headline}, function(err, article) {
   	  if (err) {
   	  	res.send(err);
   	  }

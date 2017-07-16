@@ -20,8 +20,14 @@ var helpers = {
   // getSaved: function() {
   //   return axios.get("/api/saved");
   // },
-  postSaved: function(result) {
-    return axios.post("/api/saved", {result: result});
+  postSaved: function(headline, date, url) {
+    return axios.post('/api/saved', {
+      headline: headline,
+      date: date,
+      url: url
+    }).then(function(data) {
+      console.log("Article added", data);
+    });
   }
 }
 
